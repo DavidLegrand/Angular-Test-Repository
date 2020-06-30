@@ -1,0 +1,9 @@
+<tr>
+  <td colspan="4">
+    <form (submit)="handleSubmit($event)">
+      <input [formControl]="taskTitle" (keypress)="handleChange()" type="text" placeholder="New task ..." name="taskTitle" />
+      <button type="submit">+</button>
+    </form>
+    <p [innerHTML]="error"></p>
+  </td>
+</tr>

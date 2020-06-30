@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>completed</th>
+      <th>completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of toDoList" app-task [task]="task"></tr>
+  </tbody>
+  <tfoot app-new-task (createNewTask)="addNewTask($event)" [id]="getLastId()"></tfoot>
+</table>

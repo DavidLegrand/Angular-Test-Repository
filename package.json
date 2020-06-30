@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 ./node_modules/@angular/cli/bin/ng start",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

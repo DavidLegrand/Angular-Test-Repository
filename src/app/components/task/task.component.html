@@ -1,0 +1,4 @@
+<td>{{task?.id}}</td>
+<td [ngClass]="{completed : task?.completed}">{{task?.title}}</td>
+<td><input type="checkbox" [ngModel]="task?.completed" (ngModelChange)="task.completed=$event" /></td>
+<td>{{task?.completed}}</td>
