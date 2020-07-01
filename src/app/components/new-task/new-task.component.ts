@@ -1,20 +1,21 @@
 import { Component, OnInit, EventEmitter, Output, Input, AfterViewInit } from '@angular/core';
 import { Task } from 'src/app/models/task.model';
 import { FormControl, Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
+import { TodolistService } from 'src/app/services/todolist.service';
 
 @Component({
   selector: '[app-new-task]',
   templateUrl: './new-task.component.html',
   styleUrls: ['./new-task.component.css'],
 })
+
 export class NewTaskComponent implements OnInit {
   newTask: Task;
   taskTitle: FormControl;
   error = new String('')
   @Output() createNewTask = new EventEmitter<Task>();
   @Input() id;
-  constructor() {}
+  constructor( private tdls : TodolistService) {}
 
   ngOnInit(): void {
     this.taskTitle = new FormControl(null,

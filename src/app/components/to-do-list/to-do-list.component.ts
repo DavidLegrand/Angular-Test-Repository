@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task.model';
+import { TodolistService } from '../../services/todolist.service';
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
@@ -8,17 +9,19 @@ import { Task } from '../../models/task.model';
 export class ToDoListComponent implements OnInit {
   toDoList: Task[];
 
-  constructor() {}
+  constructor(private tdls: TodolistService) {}
+
   ngOnInit(): void {
-    this.toDoList = [new Task(1, 'Sortir le chien', false)];
+    this.tdls.toDoList.subscribe((data) => (this.toDoList = <Task[]>data));
   }
-  addNewTask(task) {
-    this.toDoList.push(task);
-    console.log(this.getLastId())
-  }
-  getLastId() : Number {
+
+  getLastId(): number {
     return this.toDoList.reduce((reducer: Task, current: Task) => {
       return reducer.id > current.id ? reducer : current;
     }).id;
+  }
+
+  addNewTask(task) {
+    this.toDoList.push(task)
   }
 }

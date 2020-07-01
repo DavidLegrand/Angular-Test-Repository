@@ -1,9 +1,11 @@
-export class Task {
-  private _id: Number;
-  public get id(): Number {
+import { Itask } from './task.interface'
+
+export class Task implements Itask {
+  private _id: number;
+  public get id(): number {
     return this._id;
   }
-  public set id(v: Number) {
+  public set id(v: number) {
     this._id = v;
   }
   
@@ -23,7 +25,7 @@ export class Task {
     this._completed = v;
   }
   
-  constructor(id : Number, title : String, completed : Boolean) {
+  constructor(id : number, title : String, completed : Boolean) {
     this.id = id;
     this.title = title;
     this.completed = completed;
