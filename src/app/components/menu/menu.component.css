@@ -1,0 +1,14 @@
+li{
+  display: inline;
+  margin-left: 15px;
+  text-decoration: none;
+}
+li a {
+  background-color: #555;
+  color:#fff;
+  padding: 15px;
+}
+li a.active {
+  color:#eee;
+  background-color: #222;
+}

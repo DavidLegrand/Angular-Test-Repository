@@ -1,0 +1,13 @@
+<h1>{{user?.name}}</h1>
+<p>username : {{user?.username}}</p>
+<p>email : {{user?.email}}</p>
+<a [routerLink]="['address']">Address</a>
+<a [routerLink]="['contact']">Contact</a>
+<a [routerLink]="['company']">Company</a>
+<router-outlet></router-outlet>
+<p>
+  {{prev}} {{user.id}} {{next}}
+  <a [routerLink]="['/profile', prev]">Utilisateur Précédent</a>
+  ---
+  <a [routerLink]="['/profile', next]">Utilisateur Suivant</a>
+</p>

@@ -25,11 +25,7 @@ export class NewTaskComponent implements OnInit {
       ]
     )
   }
-
-  handleChange(){
-    console.log("task Control : ", this.taskTitle)
-  }
-
+  
   handleSubmit(e) {
     this.error = ""
     e.preventDefault();
